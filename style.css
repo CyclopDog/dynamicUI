@@ -6,9 +6,8 @@ li {
 
 .hidden-menu{display:none;}
 
-.hidden { display: none; opacity:0;}
-.active{opacity:1;}
-.slide{transition:.5s}
+.hidden { display:none; }
+
 section{margin:5vh 0; border-bottom:1px solid black;}
 
 .images { display: flex; }
@@ -27,11 +26,16 @@ section{margin:5vh 0; border-bottom:1px solid black;}
   border-radius: 50%;
   display: inline-block;
   margin: 5px;
-  background-color: black;
-  border: 2px solid white;
+  background-color: rgba(255,255,255,.5);
+  cursor:pointer;
 }
 
-.selected {
-  background-color: white;
-  border: 1px solid white;
+.dots a:hover{
+  background:white;
 }
+
+.dots a.selected {
+  background-color: white;
+}
+
+form input{display:block;}

@@ -27,6 +27,9 @@ const imageSlider = () => {
         slide.classList.add('hidden')
         container.children[j].classList.add('active')
         container.children[j].classList.remove('hidden')
+        const dots = document.querySelector('.dots')
+        dots.children[j].classList.add('selected')
+        dots.children[i].classList.remove('selected')
         break
       }
       }
@@ -44,6 +47,9 @@ const imageSlider = () => {
           slide.classList.add('hidden')
           container.children[j].classList.add('active')
           container.children[j].classList.remove('hidden')
+          const dots = document.querySelector('.dots')
+          dots.children[j].classList.add('selected')
+          dots.children[i].classList.remove('selected')
           break
         }
         }
@@ -61,11 +67,14 @@ const imgDots = () => {
   const dotCtn = document.querySelector('.dots')
   const container = document.querySelector('#image-container')
   const amount = container.childElementCount
-  
+
   for (let index = 0; index < amount; index++) {
     const a = document.createElement('a')
+    if (index === 0){a.classList.add('selected');}
     dotCtn.appendChild(a)
-    a.addEventListener('click', () => {
+    a.addEventListener('click', (e) => {
+      document.querySelector('.selected').classList.remove('selected')
+      e.target.classList.add('selected')
       const actImg = document.querySelector('.active')
       actImg.classList.remove('active')
       actImg.classList.add('hidden')
@@ -74,9 +83,26 @@ const imgDots = () => {
 
     })
   }
-  
+
 }
+
+const form_validate = () => {
+  form.addEventListener("submit", function (event) {
+  // Each time the user tries to send the data, we check
+  // if the email field is valid.
+  if (!email.validity.valid) {
+
+    // If the field is not valid, we display a custom
+    // error message.
+    error.innerHTML = "I expect an e-mail, darling!";
+    error.className = "error active";
+    // And we prevent the form from being sent by canceling the event
+    event.preventDefault();
+  }
+}, false);
+}
+
 
 imageSlider()
 imgDots()
-auto()
+//auto()
