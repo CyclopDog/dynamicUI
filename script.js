@@ -112,54 +112,68 @@ const form_validate = () => {
 email.addEventListener('focusout', () => {
   if (!email.checkValidity()) {
     email.classList.add('invalInput')
+    document.querySelector('#email-error').innerHTML = email.validationMessage
   } else {
     email.classList.remove('invalInput')
+    document.querySelector('#email-error').innerHTML = ""
   }
 })
 
 emailConfirm.addEventListener('focusout', () => {
-  if (!emailConfirm.checkValidity()) {
+  if (emailConfirm.value != email.value) {
     emailConfirm.classList.add('invalInput')
+    emailConfirm.setCustomValidity("Need to match email above")
+    document.querySelector('#emailconfirm-error').innerHTML = emailConfirm.validationMessage
   } else {
     emailConfirm.classList.remove('invalInput')
+    document.querySelector('#emailconfirm-error').innerHTML = ""
   }
 })
 
 country.addEventListener('focusout', () => {
   if (!country.checkValidity()) {
     country.classList.add('invalInput')
+    document.querySelector('#country-error').innerHTML = country.validationMessage
   } else {
     country.classList.remove('invalInput')
+    document.querySelector('#country-error').innerHTML = ""
   }
 })
 
 zip.addEventListener('focusout', () => {
   if (!zip.checkValidity()) {
     zip.classList.add('invalInput')
+    document.querySelector('#zip-error').innerHTML = zip.validationMessage
   } else {
     zip.classList.remove('invalInput')
+    document.querySelector('#zip-error').innerHTML = ""
   }
 })
 
 pass.addEventListener('focusout', () => {
   if (!pass.checkValidity()) {
     pass.classList.add('invalInput')
+    document.querySelector('#password-error').innerHTML = pass.validationMessage
   } else {
     pass.classList.remove('invalInput')
+    document.querySelector('#password-error').innerHTML = ""
   }
 })
 
 passConfirm.addEventListener('focusout', () => {
   if ( passConfirm.value === pass.value ) {
     passConfirm.classList.remove('invalInput')
+    document.querySelector('#passwordconfirm-error').innerHTML = ""
   } else {
     passConfirm.classList.add('invalInput')
+    passConfirm.setCustomValidity("Need to match password")
+    document.querySelector('#passwordconfirm-error').innerHTML = passConfirm.validationMessage
   }
 })
 
 }
 
-
+dropDownMenu()
 imageSlider()
 imgDots()
 form_validate()
