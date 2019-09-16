@@ -13,3 +13,25 @@ section{margin:5vh 0; border-bottom:1px solid black;}
 
 .images { display: flex; }
 .images > div {padding:5px;}
+
+.dots {
+  position: relative;
+  text-align: center;
+  top: -40px;
+  width: 700px;
+}
+
+.dots a {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  background-color: black;
+  border: 2px solid white;
+}
+
+.selected {
+  background-color: white;
+  border: 1px solid white;
+}

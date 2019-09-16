@@ -57,5 +57,26 @@ const auto = () => {
     }, 5000)
 }
 
+const imgDots = () => {
+  const dotCtn = document.querySelector('.dots')
+  const container = document.querySelector('#image-container')
+  const amount = container.childElementCount
+  
+  for (let index = 0; index < amount; index++) {
+    const a = document.createElement('a')
+    dotCtn.appendChild(a)
+    a.addEventListener('click', () => {
+      const actImg = document.querySelector('.active')
+      actImg.classList.remove('active')
+      actImg.classList.add('hidden')
+      container.children[index].classList.add('active')
+      container.children[index].classList.remove('hidden')
+
+    })
+  }
+  
+}
+
 imageSlider()
+imgDots()
 auto()
