@@ -9,14 +9,16 @@ section{margin:5vh 0; border-bottom:1px solid black;}
 
 #image-container{
   border:1px solid black;
-  overflow:hidden;
+  /* overflow:hidden; */
   width:600px;
   height:300px;
 }
 
 .slide{
   border:1px solid red;
-  display:inline-block;
+  /* display:inline-block; */
   width:600px;
   height:300px;
 }
+
+.images { display: flex; }
