@@ -5,7 +5,7 @@ const dropDownMenu = () => {
     mdrop.addEventListener('click', e => {
       e.preventDefault()
       let subMenu = mdrop.parentNode.children[1]
-      subMenu.classList.toggle('hidden')
+      subMenu.classList.toggle('hidden-menu')
     })
   })
 }
@@ -34,12 +34,12 @@ const imageSlider = () => {
 
     slideLeft.addEventListener('click', e => {
       e.preventDefault()
-      for (let i = container.childElementCount; i > 0; i--) {
+      for (let i = container.childElementCount-1; i >= 0; i--) {
         const slide = container.children[i];
         let j = i - 1
         const l = container.childElementCount - 1
         if (slide.classList.contains('active')) {
-          slide === container.children[0] ? j = container.childElementCount : j = i - 1
+          slide === container.children[0] ? j = l : j = i - 1
           slide.classList.remove('active')
           slide.classList.add('hidden')
           container.children[j].classList.add('active')
@@ -48,6 +48,14 @@ const imageSlider = () => {
         }
         }
       })
+
   }
 
+const auto = () => {
+    setInterval(() => {
+      document.querySelector('.img-right').click()
+    }, 5000)
+}
+
 imageSlider()
+auto()

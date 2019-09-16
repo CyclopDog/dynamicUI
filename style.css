@@ -3,22 +3,13 @@ li {
   list-style: none;
   padding:10px;
 }
-.hidden { display: none; }
 
+.hidden-menu{display:none;}
+
+.hidden { display: none; opacity:0;}
+.active{opacity:1;}
+.slide{transition:.5s}
 section{margin:5vh 0; border-bottom:1px solid black;}
 
-#image-container{
-  border:1px solid black;
-  /* overflow:hidden; */
-  width:600px;
-  height:300px;
-}
-
-.slide{
-  border:1px solid red;
-  /* display:inline-block; */
-  width:600px;
-  height:300px;
-}
-
 .images { display: flex; }
+.images > div {padding:5px;}
