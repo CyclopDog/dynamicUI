@@ -8,27 +8,66 @@
   <title>Dynamic UI</title>
 </head>
 <body>
-  <div>
+  <section>
+    <p>Desktop</p>
     <nav>
       <ul>
-        <li class="has-submenu"><a href="">Options</a>
+        <li class="has-submenu">
+          <a href="">Options</a>
           <ul class="hidden">
             <li><a href="">Info</a></li>
             <li><a href="">Contact</a></li>
           </ul>
         </li>
-
-        <li class="has-submenu"><a href="">Other Options</a>
+        <li><a href="#">Other Options</a></li>
+        <li class="has-submenu">
+          <a href="">Other other options</a>
           <ul class="hidden">
             <li><a href="">Info</a></li>
             <li><a href="">Contact</a></li>
           </ul>
         </li>
-
-        </ul>
       </ul>
     </nav>
-  </div>
+  </section>
+
+  <section>
+    <p>Mobile</p>
+    <nav>
+      <ul>
+        <li class="has-submenu">
+          <a href="">#</a>
+          <ul class="hidden">
+            <li class="has-submenu">
+              <a href="">Options</a>
+              <ul class="hidden">
+                <li><a href="">Info</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Other Options</a></li>
+            <li class="has-submenu">
+              <a href="">Other other options</a>
+              <ul class="hidden">
+                <li><a href="">Info</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </section>
+
+  <section>
+    <p>Image slider</p>
+    <div id="image-container">
+      <div class="slide"><img src="imgs/1.jpg" /></div>
+      <div class="slide"><img src="imgs/2.jpg" /></div>
+      <div class="slide"><img src="imgs/3.jpg" /></div>
+    </div>
+  </section>
+
 <script src="script.js"></script>
 </body>
 </html>
