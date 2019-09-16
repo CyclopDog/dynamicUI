@@ -39,3 +39,7 @@ section{margin:5vh 0; border-bottom:1px solid black;}
 }
 
 form input{display:block;}
+
+.invalInput {
+  border: 2px solid red;
+}

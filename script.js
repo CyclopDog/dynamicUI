@@ -87,6 +87,14 @@ const imgDots = () => {
 }
 
 const form_validate = () => {
+  const form = document.querySelector('form')
+  const email = document.querySelector('#email')
+  const emailConfirm = document.querySelector('#email-confirmation')
+  const country = document.querySelector('#country')
+  const zip = document.querySelector('#zip')
+  const pass = document.querySelector('#password')
+  const passConfirm = document.querySelector('#pass-confirm')
+
   form.addEventListener("submit", function (event) {
   // Each time the user tries to send the data, we check
   // if the email field is valid.
@@ -100,9 +108,59 @@ const form_validate = () => {
     event.preventDefault();
   }
 }, false);
+
+email.addEventListener('focusout', () => {
+  if (!email.checkValidity()) {
+    email.classList.add('invalInput')
+  } else {
+    email.classList.remove('invalInput')
+  }
+})
+
+emailConfirm.addEventListener('focusout', () => {
+  if (!emailConfirm.checkValidity()) {
+    emailConfirm.classList.add('invalInput')
+  } else {
+    emailConfirm.classList.remove('invalInput')
+  }
+})
+
+country.addEventListener('focusout', () => {
+  if (!country.checkValidity()) {
+    country.classList.add('invalInput')
+  } else {
+    country.classList.remove('invalInput')
+  }
+})
+
+zip.addEventListener('focusout', () => {
+  if (!zip.checkValidity()) {
+    zip.classList.add('invalInput')
+  } else {
+    zip.classList.remove('invalInput')
+  }
+})
+
+pass.addEventListener('focusout', () => {
+  if (!pass.checkValidity()) {
+    pass.classList.add('invalInput')
+  } else {
+    pass.classList.remove('invalInput')
+  }
+})
+
+passConfirm.addEventListener('focusout', () => {
+  if ( passConfirm.value === pass.value ) {
+    passConfirm.classList.remove('invalInput')
+  } else {
+    passConfirm.classList.add('invalInput')
+  }
+})
+
 }
 
 
 imageSlider()
 imgDots()
+form_validate()
 //auto()
